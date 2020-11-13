@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       body {
+          background-color: wheat;
+          text-align: center;
+          font-size: 10px;
+          border: 10px green;
+          border-radius: 50px;
+          border-style: solid;
+  box-sizing: border-box;
+        }
+  </style>
+  <script>
+    function validateForm()
+    {
+       
+        var name=document.myform.name.value;
+        var gender= document.myform.gender.value;
+        var mail= document.myform.contact.value;
+        var contact= document.myform.contact.value;
+        var date= document.myform.date.value;
+        var pwd1= document.myform.password.value;
+        var pwd2=document.myform.cpassword.value;
+        
+        if(name==""||gender==""||mail==""||contact==""||date==""||pwd1==""||pwd2=="")
+        {
+            alert("fields should not be empty");
+        }
+        else
+        {
+            if(pwd1==pwd2&&pwd1.length>6)
+            alert("submitted successfully");
+            else if(pwd1!=pwd2)
+            {
+                alert("enter correct password");
+            }
+            else if(pwd1==pwd2&&pwd1.length<6)
+            {
+                alert("password should be length of more than 6");
+            }
+            else{
+                document.write("Submitted");
+            }
+          
+        }
+
+       
+    }
+
+
+
+</script>
+</head>
+<body>
+​
+<div class="container">
+  <h2>Appointment form</h2>
+  <form  name="myform"  >
+    <div class="form-group">
+      <label for="name">Enter name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+    </div>
+    
+    <label for="gender">Choose Gender:</label>
+
+    <select name="gender" id="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      
+    </select>
+    <div class="form-group">
+        <label for="contact">Enter contact:</label>
+        <input type="number" class="form-control" id="contact" placeholder="Enter contact" name="contact">
+      </div>
+    <div class="form-group">
+      <label for="email">Enter Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+        <label for="date">Enter date:</label>
+        <input type="date" class="form-control" id="date" placeholder="Enter date" name="date">
+    </div>
+    <div class="form-group">
+        <label for="password">Enter password:</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+    </div>
+    <div class="form-group">
+        <label for="password">Confirm password:</label>
+        <input type="password" class="form-control" id="cpassword" placeholder="Enter password" name="cpassword">
+    </div>
+    
+    <button onclick="validateForm()" >submit</button>
+  </form>
+</div>
+
+​
+</body>
+</html>
+​
